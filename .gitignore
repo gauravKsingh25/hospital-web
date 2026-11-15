@@ -1,0 +1,89 @@
+# --- Secrets ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+
+# --- Node / Next.js --------------------------------------------------------
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+
+# --- Editors / OS / tooling ------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.claude/settings.local.json
+
+# --- Website design-kit checker (taste-skill) ---------------------------------
+# Its Chrome profiles, screenshots and run output are local; the waivers and the
+# deal history stay in git as the record of the build.
+/.taste-skill/*
+!/.taste-skill/waivers.json
+!/.taste-skill/history.json
+!/.taste-skill/layout-history.json
+/public/.taste-skill/
+
+# --- Website design kit (website/public/assets) -------------------------------
+# The taste-skill kit is copied in whole (~1,600 files: demos, checker scripts,
+# scenes, layouts the site never loads). Only the files the built site fetches
+# are committed. Found by loading every page at 1440 and 390 and recording each
+# /assets/ request, plus what those scripts import. A new kit part the site
+# starts using must be added here, or a fresh clone will 404 on it.
+/public/assets/**
+!/public/assets/**/
+!/public/assets/system.css
+!/public/assets/system.js
+!/public/assets/backgrounds/backgrounds.css
+!/public/assets/backgrounds/backgrounds.js
+!/public/assets/backgrounds/index.json
+!/public/assets/diagrams/diagram.css
+!/public/assets/diagrams/diagram.js
+!/public/assets/diagrams/mount.js
+!/public/assets/diagrams/presets.json
+!/public/assets/effects/fx.js
+!/public/assets/effects/pick.js
+!/public/assets/effects/index.json
+!/public/assets/effects/fluted-glass/effect.js
+!/public/assets/effects/silk-folds/effect.js
+!/public/assets/icons/icon.css
+!/public/assets/icons/google-pay.svg
+!/public/assets/icons/paytm.svg
+!/public/assets/icons/phonepe.svg
+!/public/assets/icons/whatsapp.svg
+!/public/assets/icons/ui-activity.svg
+!/public/assets/icons/ui-banknote.svg
+!/public/assets/icons/ui-bed-double.svg
+!/public/assets/icons/ui-flask-conical.svg
+!/public/assets/icons/ui-pill.svg
+!/public/assets/icons/ui-receipt.svg
+!/public/assets/icons/ui-stethoscope.svg
+!/public/assets/icons/ui-user.svg
+!/public/assets/icons/ui-user-plus.svg
+!/public/assets/layout/layout.css
+!/public/assets/layout/layout.js
+!/public/assets/layout/layout-check.js
+!/public/assets/moments/lib.js
+!/public/assets/moments/moments.js
+!/public/assets/moments/liquid-type/moment.js
+!/public/assets/moments/liquid-type/moment.css
+!/public/assets/motion/motion.css
+!/public/assets/motion/motion.js
+!/public/assets/objects/photo-kit/**
+!/public/assets/objects/photo-dither/object.js
+!/public/assets/objects/photo-engraving/object.js
+!/public/assets/objects/photo-halftone/object.js
+!/public/assets/ui/base.css
+!/public/assets/ui/cards.css
+!/public/assets/ui/ui.js
+!/public/assets/ui/checklist/**
+!/public/assets/ui/doc/**
+!/public/assets/ui/notify/**
+!/public/assets/ui/pipeline-board/**
+!/public/assets/ui/stat/**
+!/public/assets/ui/toggles/**
+!/public/assets/ui/window/**

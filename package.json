@@ -2,7 +2,7 @@
   "name": "nirogya-website",
   "version": "0.1.0",
   "private": true,
-  "description": "Nirogya's marketing website: a Next.js static export, separate from the hospital app in ../frontend.",
+  "description": "Nirogya's marketing website: a Next.js static export, separate from the hospital app (hospital-frontend).",
   "scripts": {
     "dev": "next dev -p 3100",
     "build": "next build",

@@ -3,14 +3,13 @@
 The marketing site for Nirogya: the home page (product, features, plans, FAQ,
 security, demo request), the signup page and the privacy, terms and refund pages.
 
-It is its **own app**, separate from the hospital app in `../frontend`: a Next.js 16 +
+It is its **own app**, separate from the hospital app ([hospital-frontend](https://github.com/gauravKsingh25/hospital-frontend)): a Next.js 16 +
 React 19 + TypeScript project with its own `package.json`, built as a static export.
 The two share no code; they meet only at the "Sign in" link.
 
 ## Run it
 
 ```bash
-cd website
 npm install
 npm run dev        # http://localhost:3100
 npm run build      # static HTML in out/
@@ -18,7 +17,7 @@ npm test           # the signup module's tests (node --test, no extra packages)
 npm start          # serves out/ on http://localhost:3100
 ```
 
-Set at build time (see the root `.env.example`):
+Set at build time (see `.env.example`):
 
 | Variable | Default | Used for |
 |---|---|---|

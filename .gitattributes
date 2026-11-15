@@ -1,0 +1,14 @@
+# One line ending everywhere, whatever the machine's core.autocrlf says.
+# Generated files are compared byte-for-byte (frontend `npm run codegen:check`),
+# and Linux containers and CI must see exactly what Windows developers commit.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
