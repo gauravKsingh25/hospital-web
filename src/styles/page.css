@@ -1,0 +1,61 @@
+/* Page CSS, only where the kit's references allow it (inside a visual, --p-h, the app frame). Loaded after the kit. */
+/* app-frame (sections-library.md, app-frame) */
+.app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
+.app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+.app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
+.app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+.app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
+@media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+@media (max-width: 1023px) {
+  .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .app > .app__pane--list { max-height: 252px; }
+  .app > .app__pane--list::after { display: none; }
+  .app .ui-win__side { display: none; }
+  .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
+  .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
+}
+@media (max-width: 639px) {
+  .app.ui { grid-template-rows: minmax(0, 1fr); }
+  .app > .app__pane--list { display: none; }
+  .app > .app__pane + .app__pane { border-top: 0; }
+}
+/* the open note fills its pane */
+.app__pane--open > .ui-doc { width: 100%; }
+/* the hero's queue window: wider than its frame at every width, so the frame's right edge cuts it */
+.hero__media .ui-win { width: 720px; max-width: none; }
+/* pricing at tablet width: the two plans side by side, so the section stays one screen */
+@media (min-width: 640px) and (max-width: 1023px) { #pricing .card--plan { grid-column: span 6; } }
+/* the visit board under the statement (pipeline-board, wide: a row of steps and the running step's log) */
+.doctors__visit { margin-top: var(--s-5); --p-h: 330px; }
+@media (max-width: 639px) { .doctors__visit { --p-h: 420px; } }
+/* a price is data, never larger than the section's heading */
+#pricing .plan__price { font-size: var(--t-h3); }
+/* the demo form stacks under its words below 1024, full width */
+@media (max-width: 1023px) { #contact-form .card { grid-column: 1 / -1; } }
+/* feature cards (features-2x2): one panel height for the group */
+#features .panel { --p-h: 264px; }
+@media (min-width: 1024px) and (max-width: 1279px) { #features .panel { --p-h: 232px; } }
+@media (max-width: 639px) { #features .panel { --p-h: 168px; } }
+
+/* the legal pages (privacy, terms, refunds) */
+.legal { padding: calc(var(--nav) + var(--s-8)) 0 var(--s-9); }
+.legal .measure > * + * { margin-top: var(--s-4); }
+.legal h2 { font-size: var(--t-h3); margin-top: var(--s-7); }
+.legal__review { display: inline-block; padding: var(--s-1) var(--s-3); border: 1px solid var(--line-strong); border-radius: var(--r-sm); font-size: var(--t-label); font-weight: 500; }
+/* the security frame fills its screen beside the words (a square, not the split's 4:5) */
+@media (min-width: 640px) { #security .frame--split { --ratio: 100%; } }
+
+/* the signup page: three steps in one card */
+.signup-page { padding: calc(var(--nav) + var(--s-8)) 0 var(--s-9); }
+.signup-page .card { align-self: start; }
+.signup > * + * { margin-top: var(--s-4); }
+.signup__title { font-size: var(--t-h3); }
+.signup__title:focus { outline: none; }
+.signup__next { padding-left: 1.25em; list-style: decimal; display: grid; gap: var(--s-2); }
+.signup__plans { border: 0; padding: 0; margin: 0; }
+.signup__plans legend { margin-bottom: var(--s-2); }
+.signup__plan { display: flex; gap: var(--s-3); align-items: center; min-height: 44px; font-weight: 400; }
+.signup__plan input { width: 20px; height: 20px; accent-color: var(--action); }
+.signup__code { max-width: 12ch; letter-spacing: 0.3em; font-variant-numeric: tabular-nums; }
+.signup__back { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; min-height: 44px; }
+@media (max-width: 1023px) { .signup-page .card { grid-column: 1 / -1; } }

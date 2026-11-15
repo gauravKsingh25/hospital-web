@@ -1,0 +1,24 @@
+{
+  "palettes": [
+    "cool-white-slate",
+    "cool-white-slate",
+    "cool-white-slate"
+  ],
+  "types": [
+    "chivo",
+    "manrope",
+    "plex"
+  ],
+  "dealt": [
+    "chivo",
+    "manrope",
+    "plex"
+  ],
+  "moments": [
+    {
+      "id": "liquid-type",
+      "at": "2026-11-14T01:12:41.001Z",
+      "seed": "10e82fef"
+    }
+  ]
+}
