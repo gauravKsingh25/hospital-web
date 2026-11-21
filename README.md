@@ -25,6 +25,19 @@ Set at build time (see `.env.example`):
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3100` | the absolute share-image URL |
 | `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | the contact form and signup call `<this>/api/v1/public/…` from the browser; this site's origin must be in the API's `CORS_ORIGINS`, or signup says it "could not reach Nirogya" |
 
+### In Docker
+
+```bash
+docker compose up -d --build   # http://localhost:3100 — nginx serving out/
+```
+
+The `Dockerfile` builds the static export and serves it from an unprivileged
+nginx (`nginx.conf`: directory indexes for the trailing-slash routes, a year's
+cache on `/_next/static/`, baseline security headers). The `NEXT_PUBLIC_*`
+values above are build args: set them in the shell or a `.env` beside
+`docker-compose.yml` and rebuild. A static host (S3 + CloudFront, Netlify,
+Cloudflare Pages) can serve `out/` directly instead.
+
 ## Where things are
 
 | Path | What |

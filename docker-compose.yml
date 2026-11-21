@@ -1,0 +1,22 @@
+# hospital-web on its own, in Docker.
+#
+#   docker compose up -d --build        # http://localhost:3100
+#
+# Builds the static export and serves it with nginx (see Dockerfile). The
+# NEXT_PUBLIC_* addresses are baked in at build time: set them in the shell
+# or in a `.env` file beside this one, then rebuild. The defaults suit a local
+# hospital-frontend on :3000 and hospital-backend on :8000.
+name: hospital-web
+
+services:
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3100}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    ports:
+      - "${SITE_PORT:-3100}:8080"
+    restart: unless-stopped
